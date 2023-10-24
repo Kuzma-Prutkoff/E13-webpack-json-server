@@ -1,0 +1,7 @@
+{
+  "serials": [
+    { "id": 1, "title": "Breaking Bad", "date": "2008", "director": " Брайан Крэнстон" },
+    { "id": 2, "title": "Dexter", "date": "2006", "phone": "Жорж Спилберг" },
+    { "id": 3, "title": "LOST", "date": "2004", "phone": " Алан Тейлор" }
+  ]
+}
