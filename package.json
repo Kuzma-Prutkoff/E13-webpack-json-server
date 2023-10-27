@@ -1,0 +1,61 @@
+{
+  "name": "dev_server",
+  "version": "1.0.0",
+  "description": "server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "dev_server": "webpack serve --config ./webpack.dev.js",
+    "prod_server": "webpack serve --config ./webpack.prod.js",
+    "prepare": "husky install",
+    "lint": "eslint --debug src/ --fix",
+    "lint:write": "eslint --debug src/ --fix",
+    "minifyImages": "imagemin src/img/* --out-dir=dist"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "./src/*.js": [
+      "npm run lint:write",
+      "git add"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kuzma-Prutkoff/E13-webpack-json-server.git"
+  },
+  "author": "Trololo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kuzma-Prutkoff/E13-webpack-json-server/issues"
+  },
+  "homepage": "https://github.com/Kuzma-Prutkoff/E13-webpack-json-server#readme",
+  "devDependencies": {
+    "css-loader": "^6.8.1",
+    "eslint": "^8.52.0",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-webpack-plugin": "^4.0.1",
+    "html-webpack-plugin": "^5.5.3",
+    "husky": "^8.0.3",
+    "imagemin-cli": "^7.0.0",
+    "json-server": "^0.17.4",
+    "lint-staged": "^15.0.2",
+    "mini-css-extract-plugin": "^2.7.6",
+    "pug": "^3.0.2",
+    "pug-loader": "^2.4.0",
+    "style-loader": "^3.3.3",
+    "stylelint": "^15.11.0",
+    "stylelint-config-standard": "^34.0.0",
+    "stylelint-webpack-plugin": "^4.1.1",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  },
+  "dependencies": {
+    "webpack-merge": "^5.10.0"
+  }
+}
